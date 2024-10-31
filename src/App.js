@@ -98,7 +98,7 @@ function MovieDetails({ selectedID, onCloseMovie, onAddWatched, watched }) {
     function () {
       async function FetchSelected() {
         const res = await fetch(
-          `http://www.omdbapi.com/?apikey="d0978f1e"&i=${selectedID}`
+          `http://www.omdbapi.com/?apikey=d0978f1e&i=${selectedID}`
         );
         const data = await res.json();
         setMovie(data);
@@ -324,7 +324,7 @@ export default function App() {
           setIsLoading(true);
           setError("");
           const res = await fetch(
-            `http://www.omdbapi.com/?apikey="d0978f1e"&s=${query}`,
+            `http://www.omdbapi.com/?apikey=d0978f1e&s=${query}`,
             { signal: controller.signal }
           );
           if (!res.ok) throw new Error("Something went wrong...");
